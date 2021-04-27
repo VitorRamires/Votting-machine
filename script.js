@@ -3,6 +3,10 @@
         var botao = document.getElementById('botao')
         var quadradoP = document.querySelectorAll('#squareP')
         var quadrado = document.querySelectorAll('.squarelist')
+        var display = document.querySelector('.display')
+        var corrige = document.querySelector('.corrige')
+        var confirma = document.querySelector('.confirma')
+      
 
 
 /*function getBotao(number){
@@ -44,19 +48,48 @@ function corrige(){
         for(i = 0; i < 4; i++){
                 if(quadradoP[i].innerHTML != ""){
                  quadradoP[i].innerHTML = ""
+                 break
                 }
         }
-        alert(`corrigido!`)
 }
 
 
 // o i vai percorrer todos os ifs, quando ele ver que o if é veradadeiro, ele vai executar o comando abaixo, e irá pro proximo
 
 function confirmar(){
+
         for(i = 0; i < 4; i++){
                 if(quadradoP[i].innerHTML != ""){
                  quadradoP[i].innerHTML = ""
                 }
         }
         alert(`Voto enviado, seu canditado é ${nomePolitico}`)
+        display.innerHTML = "FIM!"
+        display.style.fontSize = "55px"
+        
+       
+        
 }
+
+
+function branco(){
+        for(i = 0; i < 4; i++){
+                if(quadradoP[i].innerHTML != ""){
+                 quadradoP[i].innerHTML = ""
+                }
+        }
+        display.innerHTML = "VOTO EM BRANCO!"
+        display.style.fontSize = "55px"
+}
+
+
+
+/*
+function voltar(){
+display.innerHTML="Olá mundo!"
+setInterval(branco,confirmar,2000)
+}
+*/
+
+//fazer nome mudar apos ultimo digito digitado
+//desabilitar botoes de acao apos uma acao ocorrer (branco,confirmar)
