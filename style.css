@@ -35,17 +35,21 @@
     background:rgb(37, 37, 37);
 }
 
-#corrige{
+#Corrigir{
     background:orange;
 }
 
-#branco{
+#emBranco{
     background: white;
     color:black;
 }
 
-#confirma{
+#Confirmar{
     background:green;
+}
+
+.disabilitado{
+    display: none;
 }
 
 .keyboard input{
