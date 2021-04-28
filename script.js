@@ -1,12 +1,11 @@
 
         var nomePolitico = document.getElementById('nome_politico')
         var imagem = document.createElement('img')
-        var botao = document.getElementById('botao')
+        var botao = document.querySelectorAll('#botao')
         var quadradoP = document.querySelectorAll('#squareP')
         var quadrado = document.querySelectorAll('.squarelist')
         var tela = document.querySelector('.display')
         var informacoes = document.querySelector('.informações')
-        var Corrigir = document.querySelector('.Corrigir')
         var numero = document.querySelector('.numero')
 
 
@@ -27,7 +26,7 @@ function getBotao2(number){
 
 
 function corrige(){
-
+  
    for(i = 4; i > 0; i--){
     if(quadradoP[i-1].innerHTML != ""){
         quadradoP[i-1].innerHTML = ""
@@ -37,6 +36,7 @@ function corrige(){
      }
    }
 }//botao de corrigir
+
 
 
 function confirmar(){
@@ -53,13 +53,12 @@ function confirmar(){
     } else {    
     setTimeout (aparecerDisplay, 3000)
     setTimeout (aparecerImg,0)
-    nomePolitico.innerHTML = "FIM!"
-    informacoes.style.display = "block"
-    numero.style.display = "none"
-    document.getElementById("emBranco").disabled =  true;
+    telaInicial()
+    document.getElementById("emBranco").disabled = true
+    document.getElementById("Confirmar").disabled = true
     for(i = 0; i < 4; i++){
-      quadradoP[i].innerHTML = ""
       quadrado[i].classList.remove('selecionando')
+      quadradoP[i].innerHTML = ""
     }
   }
 }//botao confirmar    
@@ -73,31 +72,49 @@ document.querySelectorAll('#botao').disabled = true;
        }
       quadrado[i].classList.remove('selecionando')
     }
-        nomePolitico.innerHTML = "VOTO EM BRANCO"
-        informacoes.style.display = "none"
-        numero.style.display = "none"
-        imagem.style.display = "none"
-        setTimeout (aparecerDisplay, 3000)   
-document.getElementById("Confirmar").disabled = true;
+      setTimeout (aparecerDisplay, 3000)
+      aparecerDisplay_branco()    
+      document.getElementById("Confirmar").disabled = true;
 }//botao em branco
 
 
 function aparecerDisplay(){
-
         nomePolitico.innerHTML = "Preencha os campos"
         informacoes.style.display = "none"
         numero.style.display = "block"
         imagem.style.display = "none"
         document.getElementById("emBranco").disabled = false;
         document.getElementById("Confirmar").disabled = false;
+        for(i = 0; i < 10; i++){
+          Array.from(document.getElementsByName('tecBtn')[i].disabled = false)
+        }
 }//aparecer o display inicial
 
 
 function aparecerImg(){
-  
+
         imagem.style.display = "block"
         imagem.setAttribute('src', 'img.jfif')
         tela.appendChild(imagem)
 }//criar imagem
 
 
+function telaInicial(){
+
+    nomePolitico.innerHTML = "FIM!"
+    informacoes.style.display = "block"
+    numero.style.display = "none"
+    for(i = 0; i < 10; i++){
+    Array.from(document.getElementsByName('tecBtn')[i].disabled = true)
+    }
+}
+
+function aparecerDisplay_branco(){
+  nomePolitico.innerHTML = "VOTO EM BRANCO"
+  informacoes.style.display = "none"
+  numero.style.display = "none"
+  imagem.style.display = "none"
+  for(i = 0; i < 10; i++){
+    Array.from(document.getElementsByName('tecBtn')[i].disabled = true)
+    }
+}

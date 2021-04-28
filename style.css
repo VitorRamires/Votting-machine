@@ -22,8 +22,6 @@
     align-items: center;
 }
 
-
-
 .keyboard{
     display: flex;
     justify-content: center;
@@ -128,7 +126,7 @@
 }
 
 .squarelist{
-    width: 15%;
+    width: 20%;
     height: 100px;
     background:#ccc;
     display: inline-block;
@@ -165,3 +163,27 @@ img{
 
 }
 
+@media screen and (max-width:805px){
+    .container{
+        height:100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .keyboard{
+        width: 100%;
+    }
+
+    .display{
+        width: 100%;
+        height: 300px;
+    }
+
+    img{
+        width: 150px;
+        height: 100px;
+    }
+}
