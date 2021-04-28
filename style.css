@@ -22,6 +22,8 @@
     align-items: center;
 }
 
+
+
 .keyboard{
     display: flex;
     justify-content: center;
@@ -35,17 +37,14 @@
     background:rgb(37, 37, 37);
 }
 
-#Corrigir{
-    background:orange;
+#botao{
+    background:black;
+    color:white;
 }
 
-#emBranco{
-    background: white;
-    color:black;
-}
-
-#Confirmar{
-    background:green;
+.keyboard #botao:hover{
+    background:rgba(70, 69, 69, 0.781);
+    transform: scale(0.9,0.9);
 }
 
 .disabilitado{
@@ -56,9 +55,56 @@
     width: 25%;
     padding:20px;
     margin:10px;
-    background:black;
+    cursor:pointer;
+    border:0;
+}
+
+.keyboard input:focus{
+    background:#ccc;
+    color:black;
+}
+
+.actions-buttons{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.actions-buttons #Corrigir{
+    background:rgb(255, 153, 0);
+    display: flex;
+    justify-content: center;
     color:white;
 }
+
+.actions-buttons #emBranco{
+    background: rgb(255, 255, 255);
+    color:black;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.actions-buttons #Confirmar{
+    background:rgb(11, 180, 11);
+    display: flex;
+    justify-content: center;
+    color:white;
+}
+
+.actions-buttons #Confirmar:hover{
+    transform: scale(0.9,0.9);
+}
+.actions-buttons #emBranco:hover{
+    transform: scale(0.9,0.9);
+}
+.actions-buttons #Corrigir:hover{
+    transform: scale(0.9,0.9);
+}
+
+
+
 
 /**************************************************************/
 
