@@ -94,6 +94,16 @@
 
 .informações{
     font-size:18px;
+    display: none;
+}
+
+.aparecer{
+    display: block;
+}
+
+img{
+    width: 150px;
+    height: 150px;
 }
 
 @keyframes digito{

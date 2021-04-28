@@ -7,22 +7,22 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body onload>
+<body onchange = "alerta()">
     <section class="container">
         <div class="display">
-            <h2 id="nome_politico">Nome do politico</h2>
+            <h2 id="nome_politico">Preencha os campos</h2>
             <div class="numero">
                 <div class="squarelist" id="squarelist"><p id=squareP></p></div>
                 <div class="squarelist" id="squarelist"><p id=squareP></p></div>
                 <div class="squarelist" id="squarelist"><p id=squareP></p></div>
                 <div class="squarelist" id="squarelist"><p id=squareP></p></div>
             </div>
-            <div class="informações">
-                <p>Partido: Nome do partido</p>
-                <p>Vice prefeito: Nome do Vice</p>
-                <p>Numero de candidatura: 666</p>
+            <div class="informações"> 
+                <p>Candidato: Nome do politico</p>
+                <p>Vice: Nome do politico</p>
+                <p>Partido: Sigla do partido</p>
             </div>
-        </div>
+        </div><!--display-->
         <div class="keyboard">
         <input type="button" value="1" id=botao onclick="getBotao2(1)">
         <input type="button" value="2" id=botao onclick="getBotao2(2)">
@@ -38,10 +38,10 @@
         <input type="button" value="Branco"   id="emBranco"  onclick = "branco()">
         <input type="button" value="Confirma" id="Confirmar" onclick = "confirmar()" onclick = "mudaremBranco()">
         </div>
-        </div>
+        </div><!--Keyboard-->
 
         <script src="/script.js"></script>
-    </section>
+    </section><!--container-->
 
 </body>
 </html>
