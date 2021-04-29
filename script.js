@@ -50,10 +50,11 @@ function confirmar(){
        } 
     }
     if(controle === false){
-      setTimeout(sumirAlert, 3000)
       alerta.classList.add('descerAlert')
-      alerta.style.background = "red"
       alerta.innerHTML = "Voto invalido"
+      alerta.style.background = "red"
+      setTimeout(sumirAlert, 3000)
+     
     } else {    
     setTimeout (aparecerDisplay, 3000)
     setTimeout (aparecerImg,0)
@@ -75,13 +76,12 @@ document.querySelectorAll('#botao').disabled = true;
       if(quadradoP[i].innerHTML != "") {
         quadradoP[i].innerHTML = ""
         alerta.classList.add('descerAlert')
-        setTimeout(sumirAlert, 3000)
+        setTimeout(sumirAlert, 3000) 
        }
       quadrado[i].classList.remove('selecionando')
     }
       setTimeout (aparecerDisplay, 3000)
-      aparecerDisplay_branco()
-      setTimeout(sumirAlert, 3000)    
+      aparecerDisplay_branco()   
       document.getElementById("Confirmar").disabled = true;
 }//botao em branco
 
@@ -95,8 +95,8 @@ function aparecerDisplay(){
         document.getElementById("Confirmar").disabled = false;
         for(i = 0; i < 10; i++){
           Array.from(document.getElementsByName('tecBtn')[i].disabled = false)
-          alerta.classList.remove('descerAlert')
         }
+        alerta.classList.remove('descerAlert')
 }//aparecer o display inicial
 
 
@@ -132,4 +132,7 @@ function aparecerDisplay_branco(){
 
 function sumirAlert(){
   alerta.classList.remove('descerAlert')
+  alerta.innerHTML = "Voto Validado"
+  alerta.style.background = "green"
 }
+
