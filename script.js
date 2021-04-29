@@ -7,6 +7,7 @@
         var tela = document.querySelector('.display')
         var informacoes = document.querySelector('.informações')
         var numero = document.querySelector('.numero')
+        var alerta = document.querySelector('.alerta')
 
 
 function getBotao2(number){
@@ -49,13 +50,17 @@ function confirmar(){
        } 
     }
     if(controle === false){
-      alert('Preencha os campos')
+      setTimeout(sumirAlert, 3000)
+      alerta.classList.add('descerAlert')
+      alerta.style.background = "red"
+      alerta.innerHTML = "Voto invalido"
     } else {    
     setTimeout (aparecerDisplay, 3000)
     setTimeout (aparecerImg,0)
     telaInicial()
     document.getElementById("emBranco").disabled = true
     document.getElementById("Confirmar").disabled = true
+    alerta.classList.add('descerAlert')
     for(i = 0; i < 4; i++){
       quadrado[i].classList.remove('selecionando')
       quadradoP[i].innerHTML = ""
@@ -69,11 +74,14 @@ document.querySelectorAll('#botao').disabled = true;
     for(i = 0; i < 4; i++) {
       if(quadradoP[i].innerHTML != "") {
         quadradoP[i].innerHTML = ""
+        alerta.classList.add('descerAlert')
+        setTimeout(sumirAlert, 3000)
        }
       quadrado[i].classList.remove('selecionando')
     }
       setTimeout (aparecerDisplay, 3000)
-      aparecerDisplay_branco()    
+      aparecerDisplay_branco()
+      setTimeout(sumirAlert, 3000)    
       document.getElementById("Confirmar").disabled = true;
 }//botao em branco
 
@@ -87,6 +95,7 @@ function aparecerDisplay(){
         document.getElementById("Confirmar").disabled = false;
         for(i = 0; i < 10; i++){
           Array.from(document.getElementsByName('tecBtn')[i].disabled = false)
+          alerta.classList.remove('descerAlert')
         }
 }//aparecer o display inicial
 
@@ -110,6 +119,7 @@ function telaInicial(){
 }
 
 function aparecerDisplay_branco(){
+
   nomePolitico.innerHTML = "VOTO EM BRANCO"
   informacoes.style.display = "none"
   numero.style.display = "none"
@@ -117,4 +127,9 @@ function aparecerDisplay_branco(){
   for(i = 0; i < 10; i++){
     Array.from(document.getElementsByName('tecBtn')[i].disabled = true)
     }
+    alerta.classList.add('descerAlert')
+}
+
+function sumirAlert(){
+  alerta.classList.remove('descerAlert')
 }

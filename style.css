@@ -6,6 +6,9 @@
     padding:20px;
     box-sizing: border-box;
     margin:10px auto;
+    border-radius: 15px;
+    z-index: 2;
+    position: relative;
 }
 
 .display{
@@ -20,6 +23,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border-radius: 15px;
+    border:0;
 }
 
 .keyboard{
@@ -33,11 +38,13 @@
     float:right;
     margin-top:10px;
     background:rgb(37, 37, 37);
+    border-radius: 15px;
 }
 
 #botao{
     background:black;
     color:white;
+    border-radius: 15px;
 }
 
 .keyboard #botao:hover{
@@ -74,6 +81,7 @@
     display: flex;
     justify-content: center;
     color:white;
+    border-radius: 15px;
 }
 
 .actions-buttons #emBranco{
@@ -81,6 +89,7 @@
     color:black;
     display: flex;
     justify-content: center;
+    border-radius: 15px;
     
 }
 
@@ -89,6 +98,7 @@
     display: flex;
     justify-content: center;
     color:white;
+    border-radius: 15px;
 }
 
 .actions-buttons #Confirmar:hover{
@@ -122,7 +132,9 @@
 }
 
 .selecionando{
-    animation: digito 1.5s infinite;
+    animation: digito 2s infinite;
+    transition: 1s;
+    
 }
 
 .squarelist{
@@ -133,6 +145,7 @@
     margin-top:25px;
     transition: 0.5s;
     position: relative;
+    border-radius: 50%;
   
 }
 
@@ -152,13 +165,19 @@ img{
 
 @keyframes digito{
 
-    from{
+    0%{
         background:#ccc;
-       
+        transition: 1s;
+    }
+    50%{
+        background:rgb(27, 26, 26);
+        transition: 1s;
+        color:white;
     }
 
-    to{
-        background: rgb(156, 153, 153);
+    100%{
+        background:#ccc;
+        transition: 1s;
     }
 
 }
@@ -187,3 +206,27 @@ img{
         height: 100px;
     }
 }
+
+.alerta{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left:50%;
+    transform: translateX(-50%);
+    bottom:300px;
+    z-index: 1;
+    width: 300px;
+    height: 250px;
+    background:green;
+    color:white;
+    font-size:25px;
+    text-align: center;
+    transition: 0.5s;
+}
+
+.descerAlert{
+   bottom:30px;
+   transition: 0.5s;
+}
+
